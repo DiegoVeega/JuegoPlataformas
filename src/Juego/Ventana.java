@@ -5,13 +5,14 @@
  */
 package Juego;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 /**
  *
  * @author diego
  */
-public class Ventana {
+public class Ventana{
     public static void main(String[] args){
         JFrame ventana=new JFrame("Nombre del juego de plataforma.");
         ventana.setContentPane(new PanelJuego());
