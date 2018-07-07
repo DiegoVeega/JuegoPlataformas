@@ -5,7 +5,9 @@
  */
 package Juego;
 
+import Estado.ControladorEstados;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -27,7 +29,9 @@ public class PanelJuego extends JPanel implements Runnable, KeyListener{
     //IMAGENES
     private BufferedImage imagen;
     private Graphics2D grafico;
+    
     //CONTROLADOR
+    private ControladorEstados cde;
     
     public PanelJuego(){
         super();
@@ -48,22 +52,27 @@ public class PanelJuego extends JPanel implements Runnable, KeyListener{
     public void keyTyped(KeyEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    //AL PRESIONAR
     @Override
     public void keyPressed(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        cde.presion(e.getKeyCode());
     }
-
+    //AL SELECCIONAR
     @Override
     public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        cde.seleccion(e.getKeyCode());
     }
 
+    private void iniciar(){
+        imagen=new BufferedImage(ANCHO, ALTO,BufferedImage.TYPE_INT_RGB);
+        grafico=(Graphics2D) imagen.getGraphics();
+        correr=true;
+        cde= new ControladorEstados();
+    }
+    
     @Override
     public void run() {
-        imagen=new BufferedImage(ANCHO, ALTO,BufferedImage.TYPE_INT_RGB);
-        grafico=(Graphics2D) grafico;
-        correr=true;
+        iniciar(); 
         while(correr==true){
             actualizar();
             colocar();
@@ -72,14 +81,16 @@ public class PanelJuego extends JPanel implements Runnable, KeyListener{
     }
 
     private void actualizar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        cde.actualizar();
     }
 
     private void colocar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        cde.dibujar(grafico);
     }
     
     private void mostar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Graphics g= getGraphics();
+        g.drawImage(imagen, 0, 0, ANCHO*4, ALTO*5,null);
+        g.dispose();
     }
 }
