@@ -11,9 +11,11 @@ package Estado;
  */
 public abstract class Estado {
     
+    protected ControladorEstados cde;
+    
     public abstract void iniciar();
     public abstract void actualizar();
-    public abstract void dibujar();
+    public abstract void dibujar(java.awt.Graphics2D grafico);
     public abstract void presion(int t);
     public abstract void seleccion(int t);
     
