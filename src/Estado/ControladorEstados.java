@@ -21,9 +21,9 @@ public class ControladorEstados {
 
     public ControladorEstados() {
         estado=new ArrayList<Estado>();
-        
         EstadoActual=MENU;
         estado.add(new Menu(this));
+        estado.add(new Nivel1(this)); //agregada la entrada al nivel 1
         
     }
     public void setState(int estad){
@@ -34,8 +34,9 @@ public class ControladorEstados {
         estado.get(EstadoActual).actualizar();
     }
     public void dibujar(java.awt.Graphics2D g){
-        estado.get(EstadoActual).dibujar();
+        estado.get(EstadoActual).dibujar(g);
     }
+    //TECLAS
     public void presion(int t){
         estado.get(EstadoActual).presion(t);
     }
