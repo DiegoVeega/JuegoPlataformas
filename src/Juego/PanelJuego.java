@@ -50,7 +50,6 @@ public class PanelJuego extends JPanel implements Runnable, KeyListener{
 
     @Override
     public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     //AL PRESIONAR
     @Override

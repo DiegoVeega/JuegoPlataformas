@@ -38,7 +38,7 @@ public class Menu extends Estado{
     public Menu(ControladorEstados cde) {
         this.cde=cde;
         try {
-            f=new Fondo("/RECURSOS/fonTemp.gif");
+            f=new Fondo("/RECURSOS/FondoTemp.gif");
             f.movimiento(-0.1, 0);
             color=new Color(222,254,61);
             fuente=new Font("Fixedsys", Font.BOLD ,25);
@@ -61,8 +61,11 @@ public class Menu extends Estado{
     public void ELEC(){
         switch(OpcionActual){
             case 0:
+                //INICIAR
+                cde.setState(ControladorEstados.NIVEL1);
                 break;
             case 1:
+                
                 break;
             case 2:
                 System.exit(0);
