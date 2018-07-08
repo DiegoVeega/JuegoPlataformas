@@ -5,6 +5,7 @@
  */
 package Juegos;
 
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -35,8 +36,8 @@ public class Handler {
 			if(NombreJuego.getVisibleArea()!=null&&e.getBounds().intersects(NombreJuego.getVisibleArea())&&e.getId()==Id.particle) e.render(g);
 		}
 		
-		g.drawImage(Game.coin.getBufferedImage(), NombreJuego.getVisibleArea().x+20, NombreJuego.getVisibleArea().y+20, 75, 75, null);
-		g.drawImage(Game.lifeMushroom.getBufferedImage(), NombreJuego.getVisibleArea().x+20, NombreJuego.getVisibleArea().y+100, 75, 75, null);
+		g.drawImage(NombreJuego.coin.getBufferedImage(), NombreJuego.getVisibleArea().x+20, NombreJuego.getVisibleArea().y+20, 75, 75, null);
+		g.drawImage(NombreJuego.lifeMushroom.getBufferedImage(), NombreJuego.getVisibleArea().x+20, NombreJuego.getVisibleArea().y+100, 75, 75, null);
 		g.setColor(Color.WHITE);
 		g.setFont(new Font("Fixedsys", Font.BOLD, 20));
 		g.drawString("x " + NombreJuego.coins, NombreJuego.getVisibleArea().x+100, NombreJuego.getVisibleArea().y+95);
