@@ -58,19 +58,7 @@ public class Fireball extends Entity {
 			}
 		}
 		
-		if(jumping) {
-			gravity-=0.31;
-			setVelY((int)-gravity);
-			if(gravity<=0.5) {
-				jumping = false;
-				falling = true;
-			}
-		}	
 		
-		if(falling) {
-			gravity+=0.31;
-			setVelY((int)gravity);
-		}
 	}
 
 }
