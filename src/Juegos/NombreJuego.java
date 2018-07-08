@@ -2,6 +2,7 @@ import Juegos.Camara;
 import Juegos.Handler;
 import Juegos.Id;
 import Juegos.Musica;
+import entity.Entity;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -268,7 +269,7 @@ public class NombreJuego extends Canvas implements Runnable {
 	public static Rectangle getVisibleArea() {
 		for(int i=0;i<handler.entity.size();i++) {
 			Entity e = handler.entity.get(i);
-			if(e.getId()==Id.player) {
+			if(e.getId()==Id.jugador) {
 				if(!e.goingDownPipe) {
 					playerX = e.getX();
 					playerY = e.getY();
