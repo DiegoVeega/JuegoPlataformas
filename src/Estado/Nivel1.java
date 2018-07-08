@@ -32,8 +32,8 @@ public class Nivel1 extends Estado{
     public void iniciar() {
         
         mapeo=new Mapeo(30);
-        mapeo.cargar("/RECURSOS/suelo.png");
-        //mapeo.cargarMapa("/RECURSOS/mapa.tmx"); //FALTANTE INVESTIGAR
+        mapeo.cargar("/RECURSOS/plataforma.png");
+        mapeo.cargarMapa("/RECURSOS/nivel.tmx"); //FALTANTE INVESTIGAR
         mapeo.setPosition(0, 0);
     }
 
