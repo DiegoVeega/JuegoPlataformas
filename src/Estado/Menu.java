@@ -101,7 +101,7 @@ public class Menu extends Estado{
         f.dibujar(grafico);
         grafico.setColor(color);
         grafico.setFont(fuente);
-        grafico.drawString("HOLA SOY EL JUEGO", 95, 70);
+        grafico.drawString("HOLA SOY EL JUEGO", 95, 60);
         //OPCIONES
         grafico.setFont(fuenteop);
         for (int i = 0; i < eleccion.length; i++) {
