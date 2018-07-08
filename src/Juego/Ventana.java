@@ -13,6 +13,7 @@ import javax.swing.JFrame;
  * @author diego
  */
 public class Ventana{
+    /**
     public static void main(String[] args){
         JFrame ventana=new JFrame("Nombre del juego de plataforma.");
         ventana.setContentPane(new PanelJuego());
@@ -21,4 +22,5 @@ public class Ventana{
         ventana.pack();
         ventana.setVisible(true);
     }
+    */
 }
