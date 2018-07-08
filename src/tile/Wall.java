@@ -7,6 +7,7 @@ package tile;
 
 import Juegos.Handler;
 import Juegos.Id;
+import Juegos.NombreJuego;
 import java.awt.Graphics;
 
 /**
@@ -21,7 +22,7 @@ public class Wall extends Tile{
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Game.grass.getBufferedImage(),x,y,width,height,null);
+        g.drawImage(NombreJuego.grass.getBufferedImage(),x,y,width,height,null);
     }
 
     @Override

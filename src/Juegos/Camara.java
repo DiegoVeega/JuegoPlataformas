@@ -5,6 +5,8 @@
  */
 package Juegos;
 
+import entity.Entity;
+
 /**
  *
  * @author diego
@@ -32,6 +34,4 @@ public class Camara {
 	public void setY(int y) {
 		this.y = y;
 	}
-}
-
 }

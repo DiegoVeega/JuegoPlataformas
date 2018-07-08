@@ -7,13 +7,8 @@ import entity.Entity;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
-/**
-import com.tutorial.mario.Handler;
-import com.tutorial.mario.Id;
-import com.tutorial.mario.entity.Entity;
-import com.tutorial.mario.states.BossState;
-import com.tutorial.mario.tile.Tile;
-*/
+import tile.Tile;
+
 public class TowerBoss extends Entity {
 	
 	public int jumpTime = 0;

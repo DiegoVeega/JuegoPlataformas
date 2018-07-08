@@ -1,12 +1,15 @@
 package entity.mob;
 
+import Juegos.Handler;
+import Juegos.Id;
+import entity.Entity;
 import java.awt.Color;
 import java.awt.Graphics;
-
+/**
 import com.tutorial.mario.Handler;
 import com.tutorial.mario.Id;
 import com.tutorial.mario.entity.Entity;
-
+*/
 public class Plant extends Entity {
 	
 	private int wait;

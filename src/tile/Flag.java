@@ -7,6 +7,7 @@ package tile;
 
 import Juegos.Handler;
 import Juegos.Id;
+import Juegos.NombreJuego;
 import java.awt.Graphics;
 
 /**
@@ -21,13 +22,13 @@ public class Flag extends Tile{
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Game.flag[1].getBufferedImage(), getX(), getY(), width, 64, null);
+        g.drawImage(NombreJuego.flag[1].getBufferedImage(), getX(), getY(), width, 64, null);
 		
-	g.drawImage(Game.flag[2].getBufferedImage(), getX(), getY() + 64, width, 64, null);
-	g.drawImage(Game.flag[2].getBufferedImage(), getX(), getY() + 128, width, 64, null);
-	g.drawImage(Game.flag[2].getBufferedImage(), getX(), getY() + 192, width, 64, null);
+	g.drawImage(NombreJuego.flag[2].getBufferedImage(), getX(), getY() + 64, width, 64, null);
+	g.drawImage(NombreJuego.flag[2].getBufferedImage(), getX(), getY() + 128, width, 64, null);
+	g.drawImage(NombreJuego.flag[2].getBufferedImage(), getX(), getY() + 192, width, 64, null);
 		
-	g.drawImage(Game.flag[0].getBufferedImage(), getX(), getY() + height-64, width, 64, null);
+	g.drawImage(NombreJuego.flag[0].getBufferedImage(), getX(), getY() + height-64, width, 64, null);
     }
 
     @Override

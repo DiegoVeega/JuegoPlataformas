@@ -7,6 +7,7 @@ package tile;
 
 import Juegos.Handler;
 import Juegos.Id;
+import entity.mob.Plant;
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -19,7 +20,7 @@ public class Pipe extends Tile{
     public Pipe(int x, int y, int width, int height, boolean solid, Id id, Handler handler, int facing, boolean plant) {
         super(x, y, width, height, solid, id, handler);
         this.facing = facing;
-        if(plant) handler.addEntity(new Plant(getX(),getY()-62,getWidth(),64,Id.plant,handler));
+        if(plant) handler.addEntity(new Plant(getX(),getY()-62,getWidth(),64,Id.planta,handler));
     }
 
     @Override

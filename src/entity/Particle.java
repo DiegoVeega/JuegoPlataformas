@@ -1,10 +1,9 @@
 package entity;
 
+import Juegos.Handler;
+import Juegos.Id;
+import Juegos.NombreJuego;
 import java.awt.Graphics;
-
-import com.tutorial.mario.Game;
-import com.tutorial.mario.Handler;
-import com.tutorial.mario.Id;
 
 public class Particle extends Entity {
 	
@@ -18,12 +17,12 @@ public class Particle extends Entity {
 	}
 
 	public void render(Graphics g) {
-		if(frame>=Game.particle.length-1) fading = true;
+		if(frame>=NombreJuego.particle.length-1) fading = true;
 		
 		if(fading&&frame>=7) die();
 		
-		if(!fading) g.drawImage(Game.particle[frame].getBufferedImage(), getX(), getY(), getWidth(), getHeight(), null);
-		else g.drawImage(Game.particle[Game.particle.length - (frame - (Game.particle.length - 2))].getBufferedImage(), getX(), getY(), getWidth(), getHeight(), null);
+		if(!fading) g.drawImage(NombreJuego.particle[frame].getBufferedImage(), getX(), getY(), getWidth(), getHeight(), null);
+		else g.drawImage(NombreJuego.particle[NombreJuego.particle.length - (frame - (NombreJuego.particle.length - 2))].getBufferedImage(), getX(), getY(), getWidth(), getHeight(), null);
 	}
 
 	public void tick() {

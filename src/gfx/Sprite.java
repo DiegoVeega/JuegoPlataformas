@@ -1,4 +1,4 @@
-package com.tutorial.mario.gfx;
+package gfx;
 
 import java.awt.image.BufferedImage;
 

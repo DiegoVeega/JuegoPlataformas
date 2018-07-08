@@ -1,14 +1,19 @@
 package entity.mob;
 
+import Juegos.Handler;
+import Juegos.Id;
+import Juegos.NombreJuego;
+import entity.Entity;
 import java.awt.Graphics;
 import java.util.Random;
-
+import tile.Tile;
+/**
 import com.tutorial.mario.Game;
 import com.tutorial.mario.Handler;
 import com.tutorial.mario.Id;
 import com.tutorial.mario.entity.Entity;
 import com.tutorial.mario.tile.Tile;
-
+*/
 public class Goomba extends Entity {
 
 	private Random random = new Random();
@@ -32,9 +37,9 @@ public class Goomba extends Entity {
 	
 	public void render(Graphics g) {
 		if(facing==0) {
-			g.drawImage(Game.goomba[4+frame].getBufferedImage(),x,y,width,height,null);
+			g.drawImage(NombreJuego.goomba[4+frame].getBufferedImage(),x,y,width,height,null);
 		} else if(facing==1) {
-			g.drawImage(Game.goomba[frame].getBufferedImage(),x,y,width,height,null);
+			g.drawImage(NombreJuego.goomba[frame].getBufferedImage(),x,y,width,height,null);
 		}
 	}
 	

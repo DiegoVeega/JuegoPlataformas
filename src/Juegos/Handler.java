@@ -6,12 +6,20 @@
 package Juegos;
 
 
+import entity.Coin;
 import entity.Entity;
+import entity.mob.Koopa;
+import entity.mob.Player;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.LinkedList;
+import tile.Flag;
+import tile.Pipe;
+import tile.PowerUpBlock;
+import tile.Tile;
+import tile.Wall;
 
 /**
  *
@@ -24,7 +32,7 @@ public class Handler {
 	public void render(Graphics g) {
 		for(int i=0;i<entity.size();i++) {
 			Entity e = entity.get(i);
-			if(NombreJuego.getVisibleArea()!=null&&e.getBounds().intersects(NombreJuego.getVisibleArea())&&e.getId()!=Id.particle) e.render(g);
+			if(NombreJuego.getVisibleArea()!=null&&e.getBounds().intersects(NombreJuego.getVisibleArea())&&e.getId()!=Id.particula) e.render(g);
 		}
 		
 		for(int i=0;i<tile.size();i++) {
@@ -34,7 +42,7 @@ public class Handler {
 		
 		for(int i=0;i<entity.size();i++) {
 			Entity e = entity.get(i);
-			if(NombreJuego.getVisibleArea()!=null&&e.getBounds().intersects(NombreJuego.getVisibleArea())&&e.getId()==Id.particle) e.render(g);
+			if(NombreJuego.getVisibleArea()!=null&&e.getBounds().intersects(NombreJuego.getVisibleArea())&&e.getId()==Id.particula) e.render(g);
 		}
 		
 		g.drawImage(NombreJuego.coin.getBufferedImage(), NombreJuego.getVisibleArea().x+20, NombreJuego.getVisibleArea().y+20, 75, 75, null);
@@ -85,13 +93,13 @@ public class Handler {
 				int green = (pixel >> 8) & 0xff;
 				int blue = (pixel) & 0xff;
 				
-				if(red==0&&green==0&&blue==0) addTile(new Wall(x*64,y*64,64,64,true,Id.wall,this));
-				if(red==0&&green==0&&blue==255) addEntity(new Player(x*64,y*64,48,48,Id.player,this));
-				if(red==255&green==0&blue==0) addEntity(new Koopa(x*64,y*64,64,64,Id.koopa,this));
+				if(red==0&&green==0&&blue==0) addTile(new Wall(x*64,y*64,64,64,true,Id.pared,this));
+				if(red==0&&green==0&&blue==255) addEntity(new Player(x*64,y*64,48,48,Id.jugador,this));
+				if(red==255&green==0&blue==0) addEntity(new Koopa(x*64,y*64,64,64,Id.enemigo2,this));
 				if(red==0&&(green>=125&&green<=128)&&blue==0) addTile(new Pipe(x*64,y*64,64,64*15,true,Id.pipe,this,128-green,true));
-				if(red==255&&green==255&&blue==0) addEntity(new Coin(x*64,y*64,64,64,Id.coin,this));
-				if(red==255&green==128&&blue==0) addTile(new PowerUpBlock(x*64,y*64,64,64,true,Id.powerUp,this,NombreJuego.flower,0));
-				if(red==0&green==255&&blue==0) addTile(new Flag(x*64,y*64,64,64*5,true,Id.flag,this));
+				if(red==255&&green==255&&blue==0) addEntity(new Coin(x*64,y*64,64,64,Id.moneda,this));
+				if(red==255&green==128&&blue==0) addTile(new PowerUpBlock(x*64,y*64,64,64,true,Id.powerUp,this, NombreJuego.flower,0));
+				if(red==0&green==255&&blue==0) addTile(new Flag(x*64,y*64,64,64*5,true,Id.bandera,this));
 			}
 		}
 		

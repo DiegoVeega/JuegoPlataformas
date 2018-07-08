@@ -1,11 +1,11 @@
-package com.tutorial.mario.gfx.gui;
+package gfx.gui;
 
+import Juegos.NombreJuego;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 
-import com.tutorial.mario.Game;
 
 public class Button {
 	
@@ -33,7 +33,7 @@ public class Button {
 	}
 	
 	public void triggerEvent() {
-		if(getLabel().toLowerCase().contains("start")) Game.playing = true;
+		if(getLabel().toLowerCase().contains("start")) NombreJuego.playing = true;
 		else if(getLabel().toLowerCase().contains("exit")) System.exit(0);
 	}
 

@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tutorial.mario.input;
+package Input;
 
+import Juegos.NombreJuego;
+import gfx.gui.Button;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import com.tutorial.mario.Game;
-import com.tutorial.mario.gfx.gui.Button;
+
 
 /**
  *
@@ -44,8 +45,8 @@ public class MouseInput implements MouseListener, MouseMotionListener {
 	}
 
 	public void mousePressed(MouseEvent e) {
-		for(int i=0;i<Game.launcher.buttons.length;i++) {
-			Button button = Game.launcher.buttons[i];
+		for(int i=0;i<NombreJuego.launcher.buttons.length;i++) {
+			Button button = NombreJuego.launcher.buttons[i];
 			
 			if(x>=button.getX()&&y>=button.getY()&&x<=button.getX()+button.getWidth()&&y<=button.getY()+button.getHeight()) button.triggerEvent();
 		}

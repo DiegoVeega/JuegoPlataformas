@@ -5,16 +5,10 @@ import Estados.Enemigo2;
 import Estados.EstadoJugador;
 import Juegos.Handler;
 import Juegos.Id;
+import Juegos.NombreJuego;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-/**
-import com.tutorial.mario.Game;
-import com.tutorial.mario.Handler;
-import com.tutorial.mario.Id;
-import com.tutorial.mario.states.BossState;
-import com.tutorial.mario.states.KoopaState;
-import com.tutorial.mario.states.PlayerState;
-*/
+
 public abstract class Entity {
 	
 	public int x, y;
@@ -58,11 +52,11 @@ public abstract class Entity {
 	public void die() {
 		handler.removeEntity(this);
 		if(getId()==Id.jugador) {
-			Game.lives--;
-			Game.showDeathScreen = true;
-			Game.death.play();
+			NombreJuego.lives--;
+			NombreJuego.showDeathScreen = true;
+			NombreJuego.death.play();
 			
-			if(Game.lives<=0) Game.gameOver = true;
+			if(NombreJuego.lives<=0) NombreJuego.gameOver = true;
 		}
 	}
 

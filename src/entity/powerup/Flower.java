@@ -2,6 +2,7 @@ package entity.powerup;
 
 import Juegos.Handler;
 import Juegos.Id;
+import Juegos.NombreJuego;
 import entity.Entity;
 import java.awt.Graphics;
 
@@ -12,7 +13,7 @@ public class Flower extends Entity {
 	}
 
 	public void render(Graphics g) {
-		g.drawImage(Game.flower.getBufferedImage(), getX(), getY(), getWidth(), getHeight(), null);
+		g.drawImage(NombreJuego.flower.getBufferedImage(), getX(), getY(), getWidth(), getHeight(), null);
 	}
 
 	public void tick() {

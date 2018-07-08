@@ -1,11 +1,9 @@
-package com.tutorial.mario.entity;
+package entity;
 
+import Juegos.Handler;
+import Juegos.Id;
+import Juegos.NombreJuego;
 import java.awt.Graphics;
-
-import com.tutorial.mario.Game;
-import com.tutorial.mario.Handler;
-import com.tutorial.mario.Id;
-import com.tutorial.mario.tile.Tile;
 
 public class Coin extends Entity {
 
@@ -14,7 +12,7 @@ public class Coin extends Entity {
 	}
 
 	public void render(Graphics g) {
-		g.drawImage(Game.coin.getBufferedImage(),x,y,width,height,null);
+		g.drawImage(NombreJuego.coin.getBufferedImage(),x,y,width,height,null);
 	}
 
 	public void tick() {

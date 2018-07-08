@@ -1,8 +1,15 @@
+package Juegos;
+
+import Input.KeyInput;
+import Input.MouseInput;
 import Juegos.Camara;
 import Juegos.Handler;
 import Juegos.Id;
 import Juegos.Musica;
 import entity.Entity;
+import gfx.Sprite;
+import gfx.SpriteSheet;
+import gfx.gui.Launcher;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -19,6 +26,7 @@ import java.util.LinkedList;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import tile.Tile;
 
 public class NombreJuego extends Canvas implements Runnable {
 
@@ -46,7 +54,7 @@ public class NombreJuego extends Canvas implements Runnable {
 	
 	public static Handler handler;
 	public static SpriteSheet sheet;
-	public static Camera cam;
+	public static Camara cam;
 	public static Launcher launcher;
 	
 	public static KeyInput key;
@@ -84,7 +92,7 @@ public class NombreJuego extends Canvas implements Runnable {
     
     private void init() {
         handler = new Handler();
-        sheet = new SpriteSheet("/spritesheet1.png");
+        sheet = new SpriteSheet("/RECURSOS/spritesheet1.png");
         cam = new Camara();
         launcher = new Launcher();
         
@@ -135,8 +143,8 @@ public class NombreJuego extends Canvas implements Runnable {
         }
         
         try {
-        	levels[0] = ImageIO.read(getClass().getResource("/RECURSOS/nivell.png"));
-        	levels[1] = ImageIO.read(getClass().getResource("/RECURSOS/nivel2.png"));
+        	levels[0] = ImageIO.read(getClass().getResource("/RECURSOS/level.png"));
+        	levels[1] = ImageIO.read(getClass().getResource("/RECURSOS/level2.png"));
         	background = ImageIO.read(getClass().getResource("/RECURSOS/FondoTemp.gif"));
         } catch (IOException e) {
             e.printStackTrace();
@@ -188,7 +196,6 @@ public class NombreJuego extends Canvas implements Runnable {
 			frames++;
 			if(System.currentTimeMillis()-timer>1000) {
 				timer+=1000;
-				System.out.println(frames + " Frames Per Second " + ticks + " Ticks Per Second");
 				frames = 0;
 				ticks = 0;
 			}

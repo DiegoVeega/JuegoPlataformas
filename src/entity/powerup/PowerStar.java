@@ -2,9 +2,11 @@ package entity.powerup;
 
 import Juegos.Handler;
 import Juegos.Id;
+import Juegos.NombreJuego;
 import entity.Entity;
 import java.awt.Graphics;
 import java.util.Random;
+import tile.Tile;
 
 
 public class PowerStar extends Entity {
@@ -31,7 +33,7 @@ public class PowerStar extends Entity {
 	}
 
 	public void render(Graphics g) {
-		g.drawImage(Game.star.getBufferedImage(), getX(), getY(), getWidth(), getHeight(), null);
+		g.drawImage(NombreJuego.star.getBufferedImage(), getX(), getY(), getWidth(), getHeight(), null);
 	}
 
 	public void tick() {

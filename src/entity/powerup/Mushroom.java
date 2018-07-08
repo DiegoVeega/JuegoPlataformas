@@ -1,13 +1,12 @@
 package entity.powerup;
 
+import Juegos.Handler;
+import Juegos.Id;
+import Juegos.NombreJuego;
+import entity.Entity;
 import java.awt.Graphics;
 import java.util.Random;
-
-import com.tutorial.mario.Game;
-import com.tutorial.mario.Handler;
-import com.tutorial.mario.Id;
-import com.tutorial.mario.entity.Entity;
-import com.tutorial.mario.tile.Tile;
+import tile.Tile;
 
 public class Mushroom extends Entity {
 	
@@ -32,10 +31,10 @@ public class Mushroom extends Entity {
 	public void render(Graphics g) {
 		switch(getType()) {
 		case 0:
-			g.drawImage(Game.mushroom.getBufferedImage(), x, y, width, height, null);
+			g.drawImage(NombreJuego.mushroom.getBufferedImage(), x, y, width, height, null);
 			break;
 		case 1:
-			g.drawImage(Game.lifeMushroom.getBufferedImage(), x, y, width, height, null);
+			g.drawImage(NombreJuego.lifeMushroom.getBufferedImage(), x, y, width, height, null);
 			break;
 		}
 	}

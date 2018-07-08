@@ -1,15 +1,20 @@
 package entity.mob;
 
+import Estados.Enemigo2;
+import Juegos.Handler;
+import Juegos.Id;
+import entity.Entity;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
-
+import tile.Tile;
+/**
 import com.tutorial.mario.Handler;
 import com.tutorial.mario.Id;
 import com.tutorial.mario.entity.Entity;
 import com.tutorial.mario.states.KoopaState;
 import com.tutorial.mario.tile.Tile;
-
+*/
 public class Koopa extends Entity {
 	
 	private Random random;
@@ -32,11 +37,11 @@ public class Koopa extends Entity {
 			break;
 		}
 		
-		koopaState = KoopaState.WALKING;
+		koopaState = Enemigo2.WALKING;
 	}
 
 	public void render(Graphics g) {
-		if(koopaState==KoopaState.WALKING) g.setColor(Color.GREEN);
+		if(koopaState==Enemigo2.WALKING) g.setColor(Color.GREEN);
 		else g.setColor(new Color(0, 128, 0));
 		
 		g.fillRect(getX(),getY(),width,height);
@@ -46,7 +51,7 @@ public class Koopa extends Entity {
 		x+=velX;
 		y+=velY;
 		
-		if(koopaState==KoopaState.SHELL) {
+		if(koopaState==Enemigo2.SHELL) {
 			setVelX(0);
 			
 			shellCount++;
@@ -54,10 +59,10 @@ public class Koopa extends Entity {
 			if(shellCount>=300) {
 				shellCount = 0;
 				
-				koopaState = KoopaState.WALKING;
+				koopaState = Enemigo2.WALKING;
 			}
 			
-			if(koopaState==KoopaState.WALKING||koopaState==KoopaState.SPINNING) {
+			if(koopaState==Enemigo2.WALKING||koopaState==Enemigo2.SPINNING) {
 				shellCount = 0;
 				
 				if(velX==0) {
@@ -87,12 +92,12 @@ public class Koopa extends Entity {
 				}
 				
 				if(getBoundsLeft().intersects(t.getBounds())) {
-					if(koopaState==KoopaState.SPINNING) setVelX(10);
+					if(koopaState==Enemigo2.SPINNING) setVelX(10);
 					else setVelX(2);
 				}
 				
 				if(getBoundsRight().intersects(t.getBounds())) {
-					if(koopaState==KoopaState.SPINNING) setVelX(-10);
+					if(koopaState==Enemigo2.SPINNING) setVelX(-10);
 					else setVelX(-2);
 				}
 			}

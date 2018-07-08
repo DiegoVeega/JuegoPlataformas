@@ -1,11 +1,10 @@
 package entity;
 
+import Juegos.Handler;
+import Juegos.Id;
+import Juegos.NombreJuego;
 import java.awt.Graphics;
-
-import com.tutorial.mario.Game;
-import com.tutorial.mario.Handler;
-import com.tutorial.mario.Id;
-import com.tutorial.mario.tile.Tile;
+import tile.Tile;
 
 public class Fireball extends Entity {
 
@@ -23,7 +22,7 @@ public class Fireball extends Entity {
 	}
 
 	public void render(Graphics g) {
-		g.drawImage(Game.fireball.getBufferedImage(), getX(), getY(), getWidth(), getHeight(), null);
+		g.drawImage(NombreJuego.fireball.getBufferedImage(), getX(), getY(), getWidth(), getHeight(), null);
 	}
 
 	public void tick() {
@@ -50,7 +49,7 @@ public class Fireball extends Entity {
 		for(int i=0;i<handler.entity.size();i++) {
 			Entity e = handler.entity.get(i);
 			
-			if(e.getId()==Id.goomba||e.getId()==Id.plant||e.getId()==Id.koopa) {
+			if(e.getId()==Id.enemigo||e.getId()==Id.planta||e.getId()==Id.enemigo2) {
 				if(getBounds().intersects(e.getBounds())) {
 					die();
 					
