@@ -40,15 +40,16 @@ public class NombreJuego extends Canvas implements Runnable{
     
     public void run() {
         while(corriendo){
-            hacer();
-            objeto();
+            
         }
+        hacer();
     }
-    
+    //RENDER
     public void hacer(){
         
     }
-    
+    //TICK
+    //ACTUAL SIN USO
     public void objeto(){
         
     }
