@@ -13,10 +13,45 @@ import javax.swing.JFrame;
  *
  * @author diego
  */
-public class NombreJuego extends Canvas{
+public class NombreJuego extends Canvas implements Runnable{
     public static final int ANCHO=270;
     public static final int ALTO= ANCHO/14*10;
     public static final int ESCALA=4;
+    
+    private Thread hilos;
+    private boolean corriendo = false;
+    
+    private synchronized void inicio(){
+        if (corriendo) return;
+        corriendo = true;
+        hilos = new Thread(this, "Corriendo");
+        hilos.start();
+    }
+    
+    private synchronized void parar(){
+        if(!corriendo) return;
+        corriendo = false;
+        try{
+            hilos.join();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void run() {
+        while(corriendo){
+            hacer();
+            objeto();
+        }
+    }
+    
+    public void hacer(){
+        
+    }
+    
+    public void objeto(){
+        
+    }
 
     public NombreJuego() {
         Dimension tamanio=new Dimension(ANCHO*ESCALA,ALTO*ESCALA);
@@ -32,6 +67,7 @@ public class NombreJuego extends Canvas{
         vista.setLocationRelativeTo(null);
         vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vista.setVisible(true);
+        juego.inicio();
     }
     
 }
