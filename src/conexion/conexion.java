@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author PC
+ * @author Julio
  */
 public class conexion {
     private String user;
