@@ -308,7 +308,7 @@ public class NombreJuego extends Canvas implements Runnable {
 	
 	public static void main(String[] args) {
 		NombreJuego juego = new NombreJuego();
-		JFrame frame = new JFrame("Quiero Un Nombre Por Favor");
+		JFrame frame = new JFrame("Genesis");
 		frame.add(juego);
 		frame.pack();
 		frame.setResizable(false);
