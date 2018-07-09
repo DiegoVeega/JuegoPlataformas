@@ -28,11 +28,9 @@ public class TowerBoss extends Entity {
 	}
 
 	public void render(Graphics g) {
-		if(bossState==Enemigo1.IDLE||bossState==Enemigo1.SPINNING) g.setColor(Color.GRAY);
-		else if(bossState==Enemigo1.RECOVERING) g.drawImage(NombreJuego.Elenemigo1recovery.getBufferedImage(),x,y,width,height,null);
-		else g.drawImage(NombreJuego.Elenemigo1damage.getBufferedImage(),x,y,width,height,null);
-		
-		g.drawImage(NombreJuego.Elenemigo1.getBufferedImage(),x,y,width,height,null);
+		if(bossState==Enemigo1.IDLE||bossState==Enemigo1.SPINNING) g.drawImage(NombreJuego.Elenemigo1recovery.getBufferedImage(),x,y,width,height,null);
+		else if(bossState==Enemigo1.RECOVERING) g.drawImage(NombreJuego.Elenemigo1damage.getBufferedImage(),x,y,width,height,null);
+		else g.drawImage(NombreJuego.Elenemigo1.getBufferedImage(),x,y,width,height,null);
 	}
 
 	public void tick() {

@@ -131,8 +131,8 @@ public class NombreJuego extends Canvas implements Runnable {
             player[i] = new Sprite(i + 1, 16, sheet);
         }
         Elenemigo1 = new Sprite(1, 12, sheet);
-        Elenemigo1damage = new Sprite(2, 12, sheet);
-        Elenemigo1recovery = new Sprite(3, 12, sheet);
+        Elenemigo1damage = new Sprite(1, 11, sheet);
+        Elenemigo1recovery = new Sprite(1, 10, sheet);
 
         for (int i = 0; i < enemigo.length; i++) {
             enemigo[i] = new Sprite(i + 1, 15, sheet);
