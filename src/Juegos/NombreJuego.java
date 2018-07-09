@@ -231,7 +231,7 @@ public class NombreJuego extends Canvas implements Runnable {
         g.drawImage(NombreJuego.coin.getBufferedImage(), 20, 20, 75, 75, null);
         g.drawImage(NombreJuego.lifeMushroom.getBufferedImage(), 20, 100, 75, 75, null);
         g.setColor(Color.WHITE);
-        g.setFont(new Font("Courier", Font.BOLD, 20));
+        g.setFont(new Font("Fixedsys", Font.BOLD, 20));
         g.drawString("x " + NombreJuego.coins, 100, 95);
         g.drawString("x" + NombreJuego.lives, 100, 175);
 
@@ -242,12 +242,12 @@ public class NombreJuego extends Canvas implements Runnable {
             g.fillRect(0, 0, getWidth(), getHeight());
 
             g.setColor(Color.WHITE);
-            g.setFont(new Font("Courier", Font.BOLD, 50));
+            g.setFont(new Font("Fixedsys", Font.BOLD, 50));
             if (!gameOver) {
                 g.drawImage(player[0].getBufferedImage(), 500, 300, 100, 100, null);
                 g.drawString("x " + lives, 610, 400);
             } else {
-                g.drawString("Game over. :(", 500, 400);
+                g.drawString("Game over", 500, 400);
             }
         }
 
@@ -342,7 +342,7 @@ public class NombreJuego extends Canvas implements Runnable {
 
     public static void main(String[] args) {
         NombreJuego juego = new NombreJuego();
-        JFrame frame = new JFrame("Quiero Un Nombre Por Favor");
+        JFrame frame = new JFrame("Genesis");
         frame.add(juego);
         frame.pack();
         frame.setResizable(false);
