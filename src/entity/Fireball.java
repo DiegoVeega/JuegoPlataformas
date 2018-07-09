@@ -70,8 +70,9 @@ public class Fireball extends Entity {
             }
             if (e.getId() == Id.enemigo || e.getId() == Id.planta || e.getId() == Id.enemigo2) {
                 if (getBounds().intersects(e.getBounds())) {
+                    NombreJuego.damage.play();
                     die();
-
+                    
                     e.die();
                 }
 
