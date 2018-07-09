@@ -18,7 +18,7 @@ public class Launcher {
 	}
 	
 	public void render(Graphics g) {
-		g.setColor(Color.MAGENTA);
+		g.setColor(Color.black);
 		g.fillRect(0, 0, NombreJuego.getFrameWidth(), NombreJuego.getFrameHeight());
 		
 		for(int i=0;i<buttons.length;i++) {
