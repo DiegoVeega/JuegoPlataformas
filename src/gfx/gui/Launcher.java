@@ -13,8 +13,8 @@ public class Launcher {
 	public Launcher() {
 		buttons = new Button[2];
 		
-		buttons[0] = new Button(NombreJuego.getFrameWidth()/2-150,NombreJuego.getFrameHeight()/2-100,300,100,"Start Game");
-		buttons[1] = new Button(NombreJuego.getFrameWidth()/2-150,NombreJuego.getFrameHeight()/2+100,300,100,"Exit Game");
+		buttons[0] = new Button(NombreJuego.getFrameWidth()/2-150,NombreJuego.getFrameHeight()/2-100,300,100,"Iniciar ");
+		buttons[1] = new Button(NombreJuego.getFrameWidth()/2-150,NombreJuego.getFrameHeight()/2+100,300,100,"Abandonar ");
 	}
 	
 	public void render(Graphics g) {

@@ -24,7 +24,7 @@ public class Button {
 	
 	public void render(Graphics g) {
 		g.setColor(Color.WHITE);
-		g.setFont(new Font("Century Gothic",Font.BOLD,50));
+		g.setFont(new Font("Fixedsys",Font.BOLD,50));
 		
         FontMetrics fm = g.getFontMetrics();
 	    int stringX = (getWidth() - fm.stringWidth(getLabel())) / 2;
@@ -33,8 +33,8 @@ public class Button {
 	}
 	
 	public void triggerEvent() {
-		if(getLabel().toLowerCase().contains("start")) NombreJuego.playing = true;
-		else if(getLabel().toLowerCase().contains("exit")) System.exit(0);
+		if(getLabel().toLowerCase().contains("iniciar")) NombreJuego.playing = true;
+		else if(getLabel().toLowerCase().contains("abandonar")) System.exit(0);
 	}
 
 	public int getX() {
