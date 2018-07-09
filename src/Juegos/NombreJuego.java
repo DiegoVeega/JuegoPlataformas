@@ -299,10 +299,13 @@ public class NombreJuego extends Canvas implements Runnable {
 
     public static void switchLevel() {
         NombreJuego.level++;
-        
+        try{
         handler.clearLevel();
         handler.createLevel(levels[level]);
-        
+        } catch (Exception e){
+            gameOver=true;
+            showDeathScreen=true;
+        }
     }
 
     public static Rectangle getVisibleArea() {
