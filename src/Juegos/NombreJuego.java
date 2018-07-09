@@ -157,6 +157,7 @@ public class NombreJuego extends Canvas implements Runnable {
             levels[1] = ImageIO.read(getClass().getResource("/RECURSOS/level2.png"));
             levels[2] = ImageIO.read(getClass().getResource("/RECURSOS/level3.png"));
             levels[3] = ImageIO.read(getClass().getResource("/RECURSOS/level4.png"));
+            levels[4] = ImageIO.read(getClass().getResource("/RECURSOS/level5.png"));
             background = ImageIO.read(getClass().getResource("/RECURSOS/FondoTemp.gif"));
         } catch (IOException e) {
             e.printStackTrace();
