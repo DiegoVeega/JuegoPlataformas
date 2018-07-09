@@ -9,13 +9,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
 import tile.Tile;
-/**
-import com.tutorial.mario.Handler;
-import com.tutorial.mario.Id;
-import com.tutorial.mario.entity.Entity;
-import com.tutorial.mario.states.KoopaState;
-import com.tutorial.mario.tile.Tile;
-*/
+
 public class enemigo2 extends Entity {
 	
 	private Random random;

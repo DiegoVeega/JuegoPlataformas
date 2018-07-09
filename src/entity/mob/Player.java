@@ -14,18 +14,7 @@ import java.awt.Graphics2D;
 import java.util.Random;
 import tile.Tile;
 import tile.Trail;
-/*
-import com.tutorial.mario.Game;
-import com.tutorial.mario.Handler;
-import com.tutorial.mario.Id;
-import com.tutorial.mario.entity.Entity;
-import com.tutorial.mario.entity.Particle;
-import com.tutorial.mario.states.BossState;
-import com.tutorial.mario.states.KoopaState;
-import com.tutorial.mario.states.PlayerState;
-import com.tutorial.mario.tile.Tile;
-import com.tutorial.mario.tile.Trail;
-*/
+
 public class Player extends Entity {
 	
 	private int pixelsTravelled = 0;
