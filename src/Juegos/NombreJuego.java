@@ -46,6 +46,7 @@ public class NombreJuego extends Canvas implements Runnable {
 
     public static int coins = 0;
     public static int lives = 5;
+    public static int deathY = 0;
     public static int deathScreenTime = 0;
 
     public static boolean showDeathScreen = true;
@@ -298,9 +299,10 @@ public class NombreJuego extends Canvas implements Runnable {
 
     public static void switchLevel() {
         NombreJuego.level++;
-
+        
         handler.clearLevel();
         handler.createLevel(levels[level]);
+        
     }
 
     public static Rectangle getVisibleArea() {

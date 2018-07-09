@@ -133,7 +133,7 @@ public class Handler {
             }
         }
 
-        //Game.deathY = Game.getDeathY();
+        NombreJuego.deathY = NombreJuego.getDeathY();
     }
 
     public void clearLevel() {

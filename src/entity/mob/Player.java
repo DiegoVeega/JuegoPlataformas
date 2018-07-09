@@ -65,7 +65,7 @@ public class Player extends Entity {
 		x+=velX;
 		y+=velY;
 		
-		//if(getY()>Game.deathY) die();
+		if(getY()>NombreJuego.deathY) die();
 		
 		if(invincible) {
 			if(facing==0) handler.addTile(new Trail(getX(), getY(), getWidth(), getHeight(), false, Id.trail, handler, NombreJuego.player[4+frame].getBufferedImage()));
