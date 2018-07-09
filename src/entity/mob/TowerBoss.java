@@ -3,6 +3,7 @@ package entity.mob;
 import Estados.Enemigo1;
 import Juegos.Handler;
 import Juegos.Id;
+import Juegos.NombreJuego;
 import entity.Entity;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -28,10 +29,10 @@ public class TowerBoss extends Entity {
 
 	public void render(Graphics g) {
 		if(bossState==Enemigo1.IDLE||bossState==Enemigo1.SPINNING) g.setColor(Color.GRAY);
-		else if(bossState==Enemigo1.RECOVERING) g.setColor(Color.RED);
-		else g.setColor(Color.ORANGE);
+		else if(bossState==Enemigo1.RECOVERING) g.drawImage(NombreJuego.Elenemigo1recovery.getBufferedImage(),x,y,width,height,null);
+		else g.drawImage(NombreJuego.Elenemigo1damage.getBufferedImage(),x,y,width,height,null);
 		
-		g.fillRect(x,y,width,height);
+		g.drawImage(NombreJuego.Elenemigo1.getBufferedImage(),x,y,width,height,null);
 	}
 
 	public void tick() {

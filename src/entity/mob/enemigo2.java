@@ -3,6 +3,7 @@ package entity.mob;
 import Estados.Enemigo2;
 import Juegos.Handler;
 import Juegos.Id;
+import Juegos.NombreJuego;
 import entity.Entity;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -15,13 +16,13 @@ import com.tutorial.mario.entity.Entity;
 import com.tutorial.mario.states.KoopaState;
 import com.tutorial.mario.tile.Tile;
 */
-public class Koopa extends Entity {
+public class enemigo2 extends Entity {
 	
 	private Random random;
 	
 	private int shellCount;
 
-	public Koopa(int x, int y, int width, int height, Id id, Handler handler) {
+	public enemigo2(int x, int y, int width, int height, Id id, Handler handler) {
 		super(x, y, width, height, id, handler);
 		
 		random = new Random();
@@ -41,10 +42,11 @@ public class Koopa extends Entity {
 	}
 
 	public void render(Graphics g) {
-		if(koopaState==Enemigo2.WALKING) g.setColor(Color.GREEN);
-		else g.setColor(new Color(0, 128, 0));
-		
-		g.fillRect(getX(),getY(),width,height);
+		if(facing==0) {
+			g.drawImage(NombreJuego.enemigo2[4+frame].getBufferedImage(),x,y,width,height,null);
+		} else if(facing==1) {
+			g.drawImage(NombreJuego.enemigo2[frame].getBufferedImage(),x,y,width,height,null);
+		}
 	}
 
 	public void tick() {

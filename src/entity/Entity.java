@@ -25,6 +25,7 @@ public abstract class Entity {
 	
 	public Enemigo1 bossState;
 	public Enemigo2 koopaState;
+        public Enemigo2 goombaState;
 	public EstadoJugador state;
 	
 	public Handler handler;

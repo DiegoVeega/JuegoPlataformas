@@ -13,12 +13,12 @@ public class Launcher {
 	public Launcher() {
 		buttons = new Button[2];
 		
-		buttons[0] = new Button(NombreJuego.getFrameWidth()/2-150,NombreJuego.getFrameHeight()/2-100,300,100,"Iniciar ");
-		buttons[1] = new Button(NombreJuego.getFrameWidth()/2-150,NombreJuego.getFrameHeight()/2+100,300,100,"Abandonar ");
+		buttons[0] = new Button(NombreJuego.getFrameWidth()/2-150,NombreJuego.getFrameHeight()/2-100,300,100,"Start Game");
+		buttons[1] = new Button(NombreJuego.getFrameWidth()/2-150,NombreJuego.getFrameHeight()/2+100,300,100,"Exit Game");
 	}
 	
 	public void render(Graphics g) {
-		g.setColor(Color.black);
+		g.setColor(Color.MAGENTA);
 		g.fillRect(0, 0, NombreJuego.getFrameWidth(), NombreJuego.getFrameHeight());
 		
 		for(int i=0;i<buttons.length;i++) {

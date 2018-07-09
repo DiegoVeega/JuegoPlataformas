@@ -192,9 +192,7 @@ public class Player extends Entity {
 							gravity = 3.5;
 						}
 					} else if(getBounds().intersects(e.getBounds())) {
-						if(state==EstadoJugador.BIG) {
-							takeDamage();
-						}
+						takeDamage();
 				}
 				}
 			} else if(e.getId()==Id.moneda) {
@@ -253,6 +251,59 @@ public class Player extends Entity {
 					} else if(e.koopaState==Enemigo2.SPINNING) {
 						if(getBoundsBottom().intersects(e.getBoundsTop())) {
 							e.koopaState = Enemigo2.SHELL;
+							
+							jumping = true;
+							falling = false;
+							gravity = 3.5;
+						} else if(getBounds().intersects(e.getBounds())) takeDamage();
+					}
+                                        
+                                        
+                                        
+                                        if(e.goombaState==Enemigo2.WALKING) {
+						if(getBoundsBottom().intersects(e.getBoundsTop())) {
+							e.goombaState = Enemigo2.SHELL;
+							NombreJuego.damage.play();
+							
+							jumping = true;
+							falling = false;
+							gravity = 3.5;
+						} else if(getBounds().intersects(e.getBounds())) takeDamage();
+					} else if(e.goombaState==Enemigo2.SHELL) {
+						if(getBoundsBottom().intersects(e.getBoundsTop())) {
+							e.goombaState = Enemigo2.SPINNING;
+							
+							int dir = random.nextInt(2);
+							
+							switch(dir) {
+							case 0:
+								e.setVelX(-10);
+								break;
+							case 1:
+								e.setVelX(10);
+								break;
+							}
+							
+							jumping = true;
+							falling = false;
+							gravity = 3.5;
+						}
+						
+						if(getBoundsLeft().intersects(e.getBoundsRight())) {
+							e.setVelX(-10);
+							e.goombaState = Enemigo2.SPINNING;
+							NombreJuego.damage.play();
+						}
+						
+						if(getBoundsRight().intersects(e.getBoundsLeft())) {
+							e.setVelX(10);
+							e.goombaState = Enemigo2.SPINNING;
+							NombreJuego.damage.play();
+						}
+						
+					} else if(e.goombaState==Enemigo2.SPINNING) {
+						if(getBoundsBottom().intersects(e.getBoundsTop())) {
+							e.goombaState = Enemigo2.SHELL;
 							
 							jumping = true;
 							falling = false;
