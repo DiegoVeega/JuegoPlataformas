@@ -46,7 +46,7 @@ public class conexion {
         user="root";
         pass="";
         driver="com.mysql.jdbc.Driver";
-        url="";
+        url="";//url base de datos localhost----XAMPP---
     }
     public Connection getCnx(){
         return cnx;
