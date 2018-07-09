@@ -125,7 +125,7 @@ public class NombreJuego extends Canvas implements Runnable {
         particle = new Sprite[6];
         firePlayer = new Sprite[8];
 
-        levels = new BufferedImage[2];
+        levels = new BufferedImage[4];
 
         for (int i = 0; i < player.length; i++) {
             player[i] = new Sprite(i + 1, 16, sheet);
