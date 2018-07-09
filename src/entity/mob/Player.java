@@ -116,7 +116,7 @@ public class Player extends Entity {
 					setVelY(0);
 					if(jumping&&!goingDownPipe) {
 						jumping = false;
-						gravity = 0.8;
+						gravity = 0.7;
 						falling = true;
 					}
 					if(t.getId()==Id.powerUp) {
@@ -128,7 +128,7 @@ public class Player extends Entity {
 					if(falling) falling = false;
 				} else if(!falling&&!jumping) {
 					falling = true;
-					gravity = 0.8;
+					gravity = 0.7;
 				}
 				if(getBoundsLeft().intersects(t.getBounds())) {
 					setVelX(0);
