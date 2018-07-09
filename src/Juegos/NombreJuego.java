@@ -300,7 +300,7 @@ public class NombreJuego extends Canvas implements Runnable {
         NombreJuego.level++;
 
         handler.clearLevel();
-        handler.createLevel(levels[1]);
+        handler.createLevel(levels[level]);
     }
 
     public static Rectangle getVisibleArea() {
