@@ -11,7 +11,7 @@ public class Flower extends Entity {
 	public Flower(int x, int y, int width, int height, Id id, Handler handler) {
 		super(x, y, width, height, id, handler);
 	}
-
+        
 	public void render(Graphics g) {
 		g.drawImage(NombreJuego.flower.getBufferedImage(), getX(), getY(), getWidth(), getHeight(), null);
 	}
@@ -19,5 +19,4 @@ public class Flower extends Entity {
 	public void tick() {
 		
 	}
-
 }

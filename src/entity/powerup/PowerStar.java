@@ -8,7 +8,6 @@ import java.awt.Graphics;
 import java.util.Random;
 import tile.Tile;
 
-
 public class PowerStar extends Entity {
 	
 	private Random random;
